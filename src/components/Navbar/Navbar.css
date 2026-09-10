@@ -1,0 +1,153 @@
+/* =========================
+   NAVBAR
+========================= */
+
+.ny-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+
+  background: rgba(251, 250, 248, 0.92);
+  backdrop-filter: blur(6px);
+
+  border-bottom: 1px solid var(--line);
+}
+
+.ny-header-inner {
+  max-width: 1020px;
+  margin: 0 auto;
+
+  padding: 18px 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.ny-logo {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+
+  background: none;
+  border: none;
+
+  cursor: pointer;
+
+  color: var(--text);
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.ny-nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.ny-nav button {
+  background: none;
+  border: none;
+
+  font-size: 14.5px;
+  color: var(--muted);
+
+  cursor: pointer;
+
+  padding: 4px 0;
+
+  border-bottom: 2px solid transparent;
+
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.ny-nav button:hover {
+  color: var(--text);
+}
+
+.ny-nav button.active {
+  color: var(--text);
+  border-color: var(--gold);
+}
+
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.ny-nav-toggle {
+  display: none;
+
+  background: none;
+
+  border: 1px solid var(--line);
+  border-radius: 6px;
+
+  padding: 7px 11px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   RESPONSIVE NAVBAR
+========================= */
+
+@media (max-width: 760px) {
+
+  .ny-nav {
+    display: none;
+  }
+
+  .ny-nav-toggle {
+    display: inline-flex;
+
+    background: none;
+
+    border: 1px solid var(--line);
+    border-radius: 6px;
+
+    padding: 7px 11px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+  }
+
+  .ny-nav.open {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    background: var(--panel);
+
+    border-bottom: 1px solid var(--line);
+
+    padding: 12px 28px 18px;
+  }
+
+  .ny-nav.open button {
+    padding: 8px 0;
+  }
+}
